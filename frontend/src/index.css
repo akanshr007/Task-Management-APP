@@ -1,0 +1,135 @@
+:root {
+  font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #333;
+  background-color: #f5f7fa;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #4a90e2;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: #3a7bc8;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  min-width: 320px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f2f7ff 0%, #e5eeff 100%);
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 300px;
+  background: linear-gradient(135deg, #4a90e2 0%, #5ca8ff 100%);
+  opacity: 0.05;
+  z-index: -1;
+}
+
+/* Animated pattern background */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  opacity: 0.015;
+  background-image: 
+    linear-gradient(30deg, #4a90e2 12%, transparent 12.5%, transparent 87%, #4a90e2 87.5%, #4a90e2),
+    linear-gradient(150deg, #4a90e2 12%, transparent 12.5%, transparent 87%, #4a90e2 87.5%, #4a90e2),
+    linear-gradient(30deg, #4a90e2 12%, transparent 12.5%, transparent 87%, #4a90e2 87.5%, #4a90e2),
+    linear-gradient(150deg, #4a90e2 12%, transparent 12.5%, transparent 87%, #4a90e2 87.5%, #4a90e2),
+    linear-gradient(60deg, #4a90e277 25%, transparent 25.5%, transparent 75%, #4a90e277 75%, #4a90e277),
+    linear-gradient(60deg, #4a90e277 25%, transparent 25.5%, transparent 75%, #4a90e277 75%, #4a90e277);
+  background-size: 80px 140px;
+  background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+  animation: animateBackground 60s linear infinite;
+}
+
+@keyframes animateBackground {
+  0% { background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px; }
+  100% { background-position: 1000px 0, 1000px 0, 1040px 70px, 1040px 70px, 1000px 0, 1040px 70px; }
+}
+
+h1 {
+  font-size: 2.5rem;
+  line-height: 1.1;
+  color: #333;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+button {
+  border-radius: 4px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #4a90e2;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.25s;
+}
+
+button:hover {
+  background-color: #3a7bc8;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 2px solid #4a90e2;
+  outline-offset: 2px;
+}
+
+#root {
+  width: 100%;
+  padding: 2rem;
+}
+
+/* App Container */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.app-container h1 {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 3rem;
+}
+
+.app-container h1::after {
+  content: '';
+  position: absolute;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #4a90e2, #a3d0ff);
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
